@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        VITE_SERVER_URL: ${VITE_SERVER_URL:-ws://localhost:2567}
+    environment:
+      PORT: 2567
+      SERVE_CLIENT: "true"
+    ports:
+      - "2567:2567"
